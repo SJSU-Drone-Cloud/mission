@@ -170,7 +170,7 @@ func (m *MongoDB) updateMissionHandler(w http.ResponseWriter, r *http.Request) {
 	filter := bson.D{{"missionID", um.MissionID}}
 	update := bson.D{{"$set", bson.D{{"lastUpdated", time.Now().UTC()}, {"parameters", um.Parameters}}}} //will probably run into problems here
 	fmt.Println("pushing to db")
-	res, err = collection.UpdateOne(ctx, filter, update)
+	res, err := collection.UpdateOne(ctx, filter, update)
 	if err != nil {
 		fmt.Println("error in insert")
 		fmt.Println(err)
