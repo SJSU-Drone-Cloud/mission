@@ -147,7 +147,7 @@ func (m *MongoDB) updateMissionHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Println("in update mission unmarshalling:", err)
 		w.WriteHeader(500)
-		w.Write([]byte("create mission unmarshal error"))
+		w.Write([]byte("update mission unmarshal error"))
 		return
 	}
 
